@@ -32,9 +32,9 @@ public class Ad {
 
     private Integer maxAge;
 
-    private Date createdAt;
+    private String createdAt;
 
-    private Date expireAt;
+    private String expireAt;
 
 
     public Long getId() {

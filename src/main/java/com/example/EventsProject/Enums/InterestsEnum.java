@@ -1,6 +1,6 @@
 package com.example.EventsProject.Enums;
 
-public enum Interest {
+public enum InterestsEnum {
     SPORTS("Sports"),
     MUSIC("Music"),
     FOOD("Food"),
@@ -12,7 +12,7 @@ public enum Interest {
 
     private final String Interests;
 
-    Interest(String Interest) {
+    InterestsEnum(String Interest) {
         this.Interests = Interest;
     }
 

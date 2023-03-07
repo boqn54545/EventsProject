@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ads List</title>
+</head>
+<body>
+<h1>Ads List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Interest</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>City</th>
+        <th>Description</th>
+        <th>Age Range</th>
+        <th>Created At</th>
+        <th>Expire At</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ad : ${ads}">
+        <td th:text="${ad.id}"></td>
+        <td th:text="${ad.user.name}"></td>
+        <td th:text="${ad.interest}"></td>
+        <td th:text="${ad.title}"></td>
+        <td th:text="${ad.price}"></td>
+        <td th:text="${ad.city}"></td>
+        <td th:text="${ad.description}"></td>
+        <td th:text="${ad.minAge} + ' - ' + ${ad.maxAge}"></td>
+        <td th:text="${ad.createdAt}"></td>
+        <td th:text="${ad.expireAt}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+

@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>Ads List</h1>
+<a href="/event/createAds">Create new Hotel</a>
 <table>
     <thead>
     <tr>
@@ -25,15 +26,23 @@
     <tbody>
     <tr th:each="ad : ${ads}">
         <td th:text="${ad.id}"></td>
-        <td th:text="${ad.user.name}"></td>
+        <td th:text="${ad.user != null ? ad.user.name : ''}"></td>
         <td th:text="${ad.interest}"></td>
         <td th:text="${ad.title}"></td>
         <td th:text="${ad.price}"></td>
         <td th:text="${ad.city}"></td>
         <td th:text="${ad.description}"></td>
-        <td th:text="${ad.minAge} + ' - ' + ${ad.maxAge}"></td>
+        <td th:text="${getAgeRange}"></td>
         <td th:text="${ad.createdAt}"></td>
         <td th:text="${ad.expireAt}"></td>
+        <td>
+        <form th:action="@{event/delete/{id}(id=${ad.id})}" method="post">
+            <input type = submit name="delete" value="Delete">
+        </form></td>
+        <td>
+            <form th:action="@{event/edit/{id}(id=${ad.id})}" method="post">
+                <input type = submit name="update" value="Update">
+            </form></td>
     </tr>
     </tbody>
 </table>

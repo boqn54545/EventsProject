@@ -4,7 +4,6 @@ package com.example.EventsProject.Entities;
 import com.example.EventsProject.Enums.InterestsEnum;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class Ad {
@@ -36,6 +35,9 @@ public class Ad {
 
     private String expireAt;
 
+    public String getAgeRange() {
+        return this.minAge + " - " + this.maxAge;
+    }
 
     public Long getId() {
         return id;
@@ -43,5 +45,86 @@ public class Ad {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+    public InterestsEnum getInterest() {
+        return interest;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setInterest(InterestsEnum interest) {
+        this.interest = interest;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getMinAge() {
+        return minAge;
+    }
+
+    public void setMinAge(Integer minAge) {
+        this.minAge = minAge;
+    }
+
+    public Integer getMaxAge() {
+        return maxAge;
+    }
+
+    public void setMaxAge(Integer maxAge) {
+        this.maxAge = maxAge;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getExpireAt() {
+        return expireAt;
+    }
+
+    public void setExpireAt(String expireAt) {
+        this.expireAt = expireAt;
     }
 }

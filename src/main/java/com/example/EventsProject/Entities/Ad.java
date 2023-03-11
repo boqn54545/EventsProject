@@ -21,7 +21,9 @@ public class Ad {
 
     private String title;
 
-    private Integer price;
+    private Integer minPrice;
+
+    private Integer maxPrice;
 
     private String city;
 
@@ -38,6 +40,10 @@ public class Ad {
     public String getAgeRange() {
         return this.minAge + " - " + this.maxAge;
     }
+    public String getPriceRange() {
+        return this.minPrice + " - " + this.maxPrice;
+    }
+
 
     public Long getId() {
         return id;
@@ -72,13 +78,7 @@ public class Ad {
         this.interest = interest;
     }
 
-    public Integer getPrice() {
-        return price;
-    }
 
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
 
     public String getCity() {
         return city;
@@ -94,6 +94,22 @@ public class Ad {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getMinPrice() {
+        return minPrice;
+    }
+
+    public Integer getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(Integer maxPrice) {
+        this.maxPrice = maxPrice;
+    }
+
+    public void setMinPrice(Integer minPrice) {
+        this.minPrice = minPrice;
     }
 
     public Integer getMinAge() {

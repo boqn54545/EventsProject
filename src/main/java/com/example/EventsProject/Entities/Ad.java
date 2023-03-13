@@ -4,6 +4,8 @@ package com.example.EventsProject.Entities;
 import com.example.EventsProject.Enums.InterestsEnum;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Ad {
@@ -36,6 +38,10 @@ public class Ad {
     private String createdAt;
 
     private String expireAt;
+
+
+    @ManyToMany
+    private Set<User> applicants = new HashSet<>();
 
     public String getAgeRange() {
         return this.minAge + " - " + this.maxAge;
@@ -143,4 +149,21 @@ public class Ad {
     public void setExpireAt(String expireAt) {
         this.expireAt = expireAt;
     }
+    public void addApplicant(User user) {
+        applicants.add(user);
+    }
+
+    public void setApplicants(Set<User> applicants) {
+        this.applicants = applicants;
+    }
+
+    public void removeApplicant(User user) {
+        applicants.remove(user);
+    }
+
+
+    public Set<User> getApplicants() {
+        return applicants;
+    }
+
 }

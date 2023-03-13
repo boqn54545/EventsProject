@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -89,16 +88,24 @@
         <td th:text="${ad.createdAt}"></td>
         <td th:text="${ad.expireAt}"></td>
         <td>
-        <form th:action="@{event/delete/{id}(id=${ad.id})}" method="post">
-            <input type = submit name="delete" value="Delete">
-        </form></td>
+            <form th:action="@{event/delete/{id}(id=${ad.id})}" method="post">
+                <input type = submit name="delete" value="Delete">
+            </form></td>
         <td>
             <form th:action="@{event/edit/{id}(id=${ad.id})}" method="post">
                 <input type = submit name="update" value="Update">
             </form></td>
+        <td>
+            <th:block th:if="${not ad.applicants.contains(user)}">
+                <form th:action="@{event/apply/{id}(id=${ad.id})}" method="post">
+                    <button type="submit">Apply</button>
+                </form>
+            </th:block>
+            <a th:href="@{event/applicants/{id}(id=${ad.id})}">View Applicants</a>
+
+        </td>
     </tr>
     </tbody>
 </table>
 </body>
 </html>
-
